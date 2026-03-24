@@ -30,13 +30,22 @@ All models run on your machine. Your data never leaves your computer.
 ## Quick Start
 
 ```bash
-# 1. Clone / download this folder, then:
+# 1. Check if you have git installed
+git --version
+
+# 1.5 If not install it from official site or run these two commands
+sudo apt update
+sudo apt install git
+
+# After completion check again with command #1
+
+# 2. Clone / download this folder, then:
 cd ollama-chat
 
-# 2. Run setup (installs all dependencies)
+# 3. Run setup (installs all dependencies)
 ./setup.sh
 
-# 3. Start both backend + frontend
+# 4. Start both backend + frontend
 npm run dev
 ```
 
@@ -47,12 +56,25 @@ Open **http://localhost:5173** in your browser.
 ## Manual Start
 
 ```bash
-# Terminal 1 — Backend (port 3001)
+# Terminal 1 — Dependencies
+# git
+sudo apt update && sudo apt install git
+
+git --version
+
+#ollama
+sudo apt update && sudo apt install curl
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama --version
+
+# Terminal 2 — Backend (port 3001)
 cd backend
 npm install
 node server.js
 
-# Terminal 2 — Frontend dev server (port 5173)
+# Terminal 3 — Frontend dev server (port 5173)
 cd frontend
 npm install
 npm run dev
